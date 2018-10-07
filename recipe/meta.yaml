@@ -1,5 +1,4 @@
 {% set version = '0.6.2' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,30 +9,31 @@ package:
 source:
   fn: googleVis_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/googleVis_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/googleVis/googleVis_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/googleVis_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/googleVis/googleVis_{{ version }}.tar.gz
   sha256: c1d6e1acb9e1df3c3d4e9ace2efc167c26aee61df8f0db96e74dbcd76cbab6c5
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-jsonlite
-
   run:
     - r-base
     - r-jsonlite
 
 test:
   commands:
-    - $R -e "library('googleVis')"  # [not win]
+    - $R -e "library('googleVis')"           # [not win]
     - "\"%R%\" -e \"library('googleVis')\""  # [win]
 
 about:
@@ -44,9 +44,14 @@ about:
     browser with an Internet connection is required and for some charts a Flash player.
     The data remains local and is not uploaded to Google.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
     - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
