@@ -14,9 +14,9 @@ source:
   sha256: c1d6e1acb9e1df3c3d4e9ace2efc167c26aee61df8f0db96e74dbcd76cbab6c5
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 1
-  skip: true  # [win32]
+  number: 1001
   rpaths:
     - lib/R/lib/
     - lib/
@@ -44,8 +44,7 @@ about:
     browser with an Internet connection is required and for some charts a Flash player.
     The data remains local and is not uploaded to Google.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
