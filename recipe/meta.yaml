@@ -1,4 +1,4 @@
-{% set version = '0.6.4' %}
+{% set version = "0.6.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/googleVis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/googleVis/googleVis_{{ version }}.tar.gz
-  sha256: 7dcaf0e9d5e5598c17e8bd474141708de37eeb2578b09788431b9d871edb7eb8
+  sha256: c408b1de0e9f4efec034201d3649be709c0becaf3d74d137b08db6e191dbcb53
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -38,12 +38,9 @@ test:
 about:
   home: https://github.com/mages/googleVis#googlevis
   license: GPL (>= 2)
-  summary: R interface to Google's chart tools, allowing users to create interactive charts based
-    on data frames. Charts are displayed locally via the R HTTP help server. A modern
-    browser with an Internet connection is required and for some charts a Flash player.
-    The data remains local and is not uploaded to Google.
+  summary: R interface to Google's chart tools, allowing users to create interactive charts based on data frames. Charts are displayed locally via the R HTTP help server. A modern browser with an Internet connection is required and for some charts a Flash player. The data remains local and is not uploaded to Google.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
