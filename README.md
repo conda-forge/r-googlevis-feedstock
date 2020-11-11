@@ -3,7 +3,7 @@ About r-googlevis
 
 Home: https://github.com/mages/googleVis#googlevis
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-googlevis-feedstock/blob/master/LICENSE.txt)
 
