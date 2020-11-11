@@ -3,13 +3,11 @@ About r-googlevis
 
 Home: https://github.com/mages/googleVis#googlevis
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-googlevis-feedstock/blob/master/LICENSE.txt)
 
 Summary: R interface to Google's chart tools, allowing users to create interactive charts based on data frames. Charts are displayed locally via the R HTTP help server. A modern browser with an Internet connection is required and for some charts a Flash player. The data remains local and is not uploaded to Google.
-
-
 
 Current build status
 ====================
