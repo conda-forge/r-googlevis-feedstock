@@ -1,4 +1,4 @@
-{% set version = "0.6.9" %}
+{% set version = "0.6.10" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/googleVis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/googleVis/googleVis_{{ version }}.tar.gz
-  sha256: 0739d0a3382a73a824b5ff9a6fe329198dd05c9da5855ac051ed022d7b41b7ea
+  sha256: 7d3810c0bb36a8f69d92f9782fccf3199d10fd1179a37bdb1474dee53aa3584a
 
 build:
   merge_build_host: true  # [win]
